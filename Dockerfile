@@ -1,14 +1,11 @@
 FROM wurstmeister/kafka
 MAINTAINER ThanhCL
 
-
-
 # Download agent & config
-RUN cd /home
-RUN mkdir prometheus
+RUN mkdir /home/prometheus
 
-ADD jmx_prometheus_javaagent-0.3.1.jar /home/prometheus/jmx_prometheus_javaagent-0.3.1.jar
-ADD kafka-0-8-2.yml /home/prometheus/kafka-0-8-2.yml
+COPY jmx_prometheus_javaagent-0.3.1.jar /home/prometheus/jmx_prometheus_javaagent-0.3.1.jar
+COPY kafka-0-8-2.yml /home/prometheus/kafka-0-8-2.yml
 
 ADD server.properties /opt/kafka/config/server.properties
 
