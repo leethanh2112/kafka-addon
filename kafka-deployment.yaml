@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kafka1
-        image: wurstmeister/kafka
+        image: docker.registry.local:5000/kafka-addon:v1.${BUILD_NUMBER}
         ports:
         - containerPort: 9092
         env:
@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: kafka2
-        image: wurstmeister/kafka
+        image: docker.registry.local:5000/kafka-addon:v1.${BUILD_NUMBER}
         ports:
         - containerPort: 9092
         env:
@@ -72,7 +72,7 @@ spec:
     spec:
       containers:
       - name: kafka3
-        image: wurstmeister/kafka
+        image: docker.registry.local:5000/kafka-addon:v1.${BUILD_NUMBER}
         ports:
         - containerPort: 9092
         env:
