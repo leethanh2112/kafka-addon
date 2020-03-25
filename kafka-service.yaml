@@ -1,3 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kaf1
+  namespace: system-msg
+spec:
+  ports:
+  - name: port-7071
+    port: 7071
+    protocol: TCP 
+  selector:
+    app: kafka1
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -15,6 +28,19 @@ spec:
   selector:
     app: kafka1
 ---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kaf2
+  namespace: system-msg
+spec:
+  ports:
+  - name: port-7071
+    port: 7071
+    protocol: TCP 
+  selector:
+    app: kafka2
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,6 +57,19 @@ spec:
       protocol: TCP
   selector:
     app: kafka2
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kaf3
+  namespace: system-msg
+spec:
+  ports:
+  - name: port-7071
+    port: 7071
+    protocol: TCP 
+  selector:
+    app: kafka3
 ---
 apiVersion: v1
 kind: Service
