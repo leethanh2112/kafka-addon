@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: kaf1
+  name: kaf1-exporter
   namespace: system-msg
 spec:
   ports:
@@ -31,7 +31,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: kaf2
+  name: kaf2-exporter
   namespace: system-msg
 spec:
   ports:
@@ -61,7 +61,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: kaf3
+  name: kaf3-exporter
   namespace: system-msg
 spec:
   ports:
