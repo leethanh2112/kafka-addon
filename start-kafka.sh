@@ -147,4 +147,4 @@ if [[ -n "$CUSTOM_INIT_SCRIPT" ]] ; then
   eval "$CUSTOM_INIT_SCRIPT"
 fi
 
-exec "$KAFKA_HOME/bin/kafka-server-start.sh" "$KAFKA_HOME/config/server.properties" "&" "KAFKA_OPTS=-javaagent:/home/prometheus/jmx_prometheus_javaagent-0.3.1.jar=7071:/home/prometheus/kafka-0-8-2.yml"
+exec "$KAFKA_HOME/bin/kafka-server-start.sh" "$KAFKA_HOME/config/server.properties" "&" "KAFKA_OPTS=$KAFKA_OPTS -javaagent:/home/prometheus/jmx_prometheus_javaagent-0.3.1.jar=7071:/home/prometheus/kafka-0-8-2.yml"
