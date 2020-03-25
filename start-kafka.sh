@@ -1,4 +1,3 @@
-bash-4.4# cat /usr/bin/start-kafka.sh
 #!/bin/bash -e
 
 # Allow specific kafka versions to perform any unique bootstrap operations
