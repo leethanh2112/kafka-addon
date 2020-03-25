@@ -7,9 +7,10 @@ RUN mkdir /opt/kafka/prometheus
 COPY jmx_prometheus_javaagent-0.3.1.jar /opt/kafka/prometheus/jmx_prometheus_javaagent-0.3.1.jar
 COPY kafka-0-8-2.yml /opt/kafka/prometheus/kafka-0-8-2.yml
 
-COPY start-kafka.sh /usr/bin/start-kafka.sh
+COPY kafka-start.sh /opt/kafka/prometheus/kafka-start.sh
+RUN chmod 755 /opt/kafka/prometheus/kafka-start.sh
 
-CMD ["start-kafka.sh"]
+CMD ["kafka-start.sh"]
 
 
 
