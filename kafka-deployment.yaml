@@ -26,6 +26,10 @@ spec:
           value: 10.0.15.101
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181
+        lifecycle:
+          postStart:
+            exec:
+              command: ["KAFKA_OPTS="-javaagent:/opt/kafka/prometheus/jmx_prometheus_javaagent-0.3.1.jar=7071:/opt/kafka/prometheus/kafka-0-8-2.yml"", "/opt/kafka_2.12-2.4.1/bin/kafka-server-start.sh", "-daemon", "/opt/kafka/config/server.properties"]
 ---
 apiVersion: v1
 kind: ReplicationController
@@ -55,6 +59,10 @@ spec:
           value: 10.0.15.102
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181
+        lifecycle:
+          postStart:
+            exec:
+              command: ["KAFKA_OPTS="-javaagent:/opt/kafka/prometheus/jmx_prometheus_javaagent-0.3.1.jar=7071:/opt/kafka/prometheus/kafka-0-8-2.yml"", "/opt/kafka_2.12-2.4.1/bin/kafka-server-start.sh", "-daemon", "/opt/kafka/config/server.properties"]
 ---
 apiVersion: v1
 kind: ReplicationController
@@ -84,3 +92,7 @@ spec:
           value: 10.0.15.103
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181
+        lifecycle:
+          postStart:
+            exec:
+              command: ["KAFKA_OPTS="-javaagent:/opt/kafka/prometheus/jmx_prometheus_javaagent-0.3.1.jar=7071:/opt/kafka/prometheus/kafka-0-8-2.yml"", "/opt/kafka_2.12-2.4.1/bin/kafka-server-start.sh", "-daemon", "/opt/kafka/config/server.properties"]
